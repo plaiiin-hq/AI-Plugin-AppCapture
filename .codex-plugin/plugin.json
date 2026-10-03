@@ -1,0 +1,21 @@
+{
+  "name": "plaiiin-app-capture",
+  "version": "1.0.0",
+  "description": "Capture a Mac window, rectangle, or web page through plaiiin App Capture.",
+  "author": { "name": "Plaiiin" },
+  "homepage": "https://github.com/plaiiin-hq/plaiiin-app-capture-plugin",
+  "repository": "https://github.com/plaiiin-hq/plaiiin-app-capture-plugin",
+  "license": "Apache-2.0",
+  "keywords": ["macos", "screenshots", "screen-recording", "app-capture"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "plaiiin App Capture",
+    "shortDescription": "Capture windows, rectangles, and web pages on a Mac",
+    "longDescription": "Ask for a screen capture and receive the real image or an actionable refusal—never a plausible but wrong result.",
+    "developerName": "Plaiiin",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://plaiiin.com/app-capture"
+  }
+}

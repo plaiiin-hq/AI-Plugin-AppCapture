@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "app-capture": {
+      "type": "stdio",
+      "command": "/usr/bin/nc",
+      "args": ["-U", "${HOME}/Library/Group Containers/LA8GX8Y3R9.group.plaiiin/run/appcapture-mcp.sock"]
+    }
+  }
+}

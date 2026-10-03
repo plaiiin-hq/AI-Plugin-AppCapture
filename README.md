@@ -12,6 +12,18 @@ window, a region or a web page while you talk about it.
 Then: *"shoot the Workflows window"*, *"poster shot of Safari on the studio backdrop"*,
 *"render plaiiin.com in light and dark"*, *"film the Finder window while I drag a file"*.
 
+## Codex
+
+This repository is also a portable Codex plugin. Add it as a marketplace, then install
+`plaiiin-app-capture` from that source:
+
+```
+codex plugin marketplace add plaiiin-hq/plaiiin-app-capture-plugin
+codex plugin add plaiiin-app-capture@plaiiin-app-capture
+```
+
+Codex uses the same `app-capture` skill and local Unix-socket MCP connection as Claude Code.
+
 ## What you need
 
 The app itself — a free, signed and notarized download from

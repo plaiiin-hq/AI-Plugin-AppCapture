@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "plaiiin-app-capture",
+  "version": "1.0.0",
+  "description": "Capture a Mac window, rectangle, or web page through plaiiin App Capture.",
+  "author": {
+    "name": "Plaiiin",
+    "url": "https://plaiiin.com"
+  },
+  "homepage": "https://github.com/plaiiin-hq/plaiiin-app-capture-plugin",
+  "repository": "https://github.com/plaiiin-hq/plaiiin-app-capture-plugin",
+  "license": "Apache-2.0",
+  "keywords": ["macos", "screenshots", "screen-recording", "app-capture"]
+}
