@@ -7,8 +7,8 @@
     "name": "Plaiiin",
     "url": "https://plaiiin.com"
   },
-  "homepage": "https://github.com/plaiiin-hq/plaiiin-app-capture-plugin",
-  "repository": "https://github.com/plaiiin-hq/plaiiin-app-capture-plugin",
+  "homepage": "https://github.com/plaiiin-hq/AI-Plugin-AppCapture",
+  "repository": "https://github.com/plaiiin-hq/AI-Plugin-AppCapture",
   "license": "Apache-2.0",
   "keywords": ["macos", "screenshots", "screen-recording", "app-capture"]
 }

@@ -5,7 +5,7 @@ Capture](https://plaiiin.com/app-capture) into Claude Code, so an assistant can 
 window, a region or a web page while you talk about it.
 
 ```
-/plugin marketplace add plaiiin-hq/plaiiin-app-capture-plugin
+/plugin marketplace add plaiiin-hq/AI-Plugin-AppCapture
 /plugin install plaiiin-app-capture
 ```
 
@@ -18,7 +18,7 @@ This repository is also a portable Codex plugin. Add it as a marketplace, then i
 `plaiiin-app-capture` from that source:
 
 ```
-codex plugin marketplace add plaiiin-hq/plaiiin-app-capture-plugin
+codex plugin marketplace add plaiiin-hq/AI-Plugin-AppCapture
 codex plugin add plaiiin-app-capture@plaiiin-app-capture
 ```
 
