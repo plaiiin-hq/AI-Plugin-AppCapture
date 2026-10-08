@@ -61,9 +61,9 @@ All opt-in, all restored afterwards — including when the shot fails.
 |---|---|
 | `isolate` | hides the other apps, brings this one forward (also the fix for Stage Manager and other desktops) |
 | `center` · `fit` · `size` | centre it, pull one hanging off a screen edge back on, or give it an exact frame. Need Accessibility |
-| `margin` | points of space around the window |
+| `margin` | points of space around the window, from its edge. Product shots use `200` |
 | `settle` | seconds to let things stop moving before the shutter. A window that is still animating is photographed mid-animation |
-| `backdrop` | put a surface behind the window instead of the desktop — see below. Needs `isolate` |
+| `backdrop` | draw a surface around the window instead of photographing the desktop — see below. Needs no `isolate` |
 
 Without a `backdrop` the window is photographed **as itself**, so anything lying on top of it is
 not in the picture even without `isolate`.
@@ -85,17 +85,18 @@ word, so a set of shots is actually a set, and it means the same picture next mo
 }}
 ```
 
-A preset implies `isolate`. Anything you write alongside it wins, so `preset: studio` with
+Anything you write alongside a preset wins, so `preset: studio` with
 `margin: 220` is the studio look with more room.
 
-**The shadow in the picture is macOS's own**, not drawn on: the backdrop is really behind the
-window when the shutter fires. On `studio`'s near-black it is subtle by nature; on `paper` it is
-unmistakable. If a shot looks pasted-on, the preset is the reason, not the tool.
+**The shadow in the picture is macOS's own**, not drawn on. macOS draws the full shadow only for
+the ACTIVE window, so the app brings the window's app forward first; if something else takes focus
+anyway, `notes` says so and the shadow is the thin inactive one — shoot again. On `studio`'s
+near-black the shadow is subtle by nature; on `paper` it is unmistakable.
 
 ## Poster shots, written by hand
 
 `margin` alone photographs the desktop around the window — wallpaper, other windows, the Dock.
-`backdrop` puts a surface there instead, so a set of shots looks the same on every Mac:
+`backdrop` draws a surface there instead, so a set of shots looks the same on every Mac:
 
 | value | is |
 |---|---|
@@ -106,14 +107,14 @@ unmistakable. If a shot looks pasted-on, the preset is the reason, not the tool.
 ```json
 {"name": "shot", "arguments": {
   "owner": "Safari", "output": "~/Desktop/poster.png",
-  "isolate": true, "margin": 150, "backdrop": "spotlight:#12161B:pool:0.85:0.45"
+  "margin": 200, "backdrop": "spotlight:#12161B:pool:0.85:0.45"
 }}
 ```
 
-`backdrop` requires `isolate: true`, and the reason is worth knowing: the surface is placed on the
-screen BEHIND the window and the region is photographed, so the window's own shadow falls on it
-and its vibrancy samples it. A border drawn on afterwards has no shadow and its glass still shows
-the desktop that was really there.
+What happens: the window's app comes forward, 1 panel of the surface goes directly behind the
+window (so its glass samples the surface), the window is captured ALONE with its shadow, and the
+margin is drawn around it, measured from the window's edge. Nothing else on the desk is hidden or
+moved, the margin is never cut by the edge of the screen, and focus goes back afterwards.
 
 A spotlight takes `spotlight:<tint>:<style>:<size>:<strength>` — tint is the colour of the dark,
 strength is contrast (how far the pool lifts toward white), size is how tight the pool is. Useful
